@@ -77,3 +77,44 @@ bool Tree::search( Node * node, int value ) {
     return search( node->right, value );
   }
 }
+
+void Tree::preorder_traversal() {
+  preorder_traversal( root );
+  cout << endl;
+}
+
+void Tree::inorder_traversal() {
+  inorder_traversal( root );
+  cout << endl;
+}
+
+void Tree::postorder_traversal() {
+  postorder_traversal( root );
+  cout << endl;
+}
+
+void Tree::preorder_traversal( Node * node ) {
+  if( node != NULL ) {
+    cout << node->value << " ";
+    preorder_traversal( node->left );
+    preorder_traversal( node->right );
+  }
+}
+
+void Tree::inorder_traversal( Node * node ) {
+  if( node != NULL ) {
+    inorder_traversal( node->left );
+    cout << node->value << " ";
+    inorder_traversal( node->right );
+  }
+}
+
+void Tree::postorder_traversal( Node * node ) {
+  if( node != NULL ) {
+    postorder_traversal( node->left );
+    postorder_traversal( node->right );
+    cout << node->value << " ";
+  }
+}
+
+
